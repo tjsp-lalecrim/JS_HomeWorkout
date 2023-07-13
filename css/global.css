@@ -1,0 +1,44 @@
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 0 10px 0;
+    margin-bottom: 10px;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.btn {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+body>.btn {
+
+    margin: 10px auto 10px auto;
+    display: block;
+}
+
+.btn+.btn {
+    margin-left: 5px;
+}
+
+.btn:hover {
+    background-color: #f4f4f4;
+    cursor: pointer;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/sequencer.css">
+    <script src="js/workouts-list.js"></script>
+    <script src="js/exercises-list.js"></script>
+    <script src="js/sequencer.js"></script>
+    <title>Sequencer</title>
+</head>
+
+<body>
+    <header>
+        <h1 id="title" class="title"></h1>
+    </header>
+
+    <button id="backToWorkouts" class="btn">Back to Workouts</button>
+
+    <div id="sequencer" class="sequencer">
+        <div id="current-step" class="step">
+            <p id="stepId" class="step-order"></p>
+            <p id="stepDescription" class="step-description"></p>
+            <p id="stepDuration" class="step-duration"><b></b></p>
+            <p id="nextStep" class="next-step"></p>
+            <div class="step-buttons">
+                <button id="btnPause" class="btn">Pause</button>
+                <button id="btnPrevious" class="btn">Previous</button>
+                <button id="btnNext" class="btn">Next</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
