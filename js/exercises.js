@@ -36,11 +36,14 @@ window.onload = function () {
     exerciseElement.classList.add("exercise");
     const exerciseId = document.createElement("p");
     exerciseId.innerText = "#" + (index + 1);
+    const exerciseImg = document.createElement("img");
+    exerciseImg.src = exercise.img;
     const exerciseName = document.createElement("h3");
     exerciseName.innerText = exercise.name;
     const exerciseDuration = document.createElement("p");
     exerciseDuration.innerText = exercise.duration + " seconds";
     exerciseElement.appendChild(exerciseId);
+    exerciseElement.appendChild(exerciseImg);
     exerciseElement.appendChild(exerciseName);
     exerciseElement.appendChild(exerciseDuration);
     return exerciseElement;

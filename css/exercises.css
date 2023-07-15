@@ -46,6 +46,14 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+.exercise img{
+    max-width: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 5px 0;
+    padding: 0;
+}
+
 .exercise p {
     margin: 5px 0;
     padding: 0;
