@@ -6,6 +6,7 @@ window.onload = function () {
   const title = document.getElementById("title");
   const sequencer = document.getElementById("sequencer");
   const stepId = sequencer.querySelector("#stepId");
+  const stepImg = sequencer.querySelector("#stepImg");
   const stepDescription = sequencer.querySelector("#stepDescription");
   const stepDuration = sequencer.querySelector("#stepDuration");
   const nextStepButton = sequencer.querySelector("#nextStep");
@@ -115,6 +116,7 @@ window.onload = function () {
     stepId.innerText = currWorkout
       ? `Step ${currStep + 1} of ${steps.length}`
       : "";
+    stepImg.src = steps[currStep]?.img;
     stepDescription.innerText = steps[currStep]?.name;
     stepDuration.innerText = steps[currStep]?.duration;
     nextStepButton.innerText =
