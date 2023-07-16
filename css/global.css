@@ -5,12 +5,13 @@ body {
 
 header {
     width: 100%;
+    max-width: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #fff;
     padding: 10px 0 10px 0;
-    margin-bottom: 10px;
+    margin: auto;
 }
 
 .title {
