@@ -25,7 +25,7 @@ window.onload = function () {
   totalDuration.innerText =
     currExercises.reduce(function (total, exercise) {
       return total + exercise.duration;
-    }, 0) + " seconds";
+    }, 0) + " seconds";  
 
   // Create exercise element
   function createExercise(exercise, index) {
@@ -34,18 +34,18 @@ window.onload = function () {
     const exerciseElement = document.createElement("div");
     exerciseElement.id = "exercise-" + index;
     exerciseElement.classList.add("exercise");
-    const exerciseId = document.createElement("p");
-    exerciseId.innerText = "#" + (index + 1);
     const exerciseImg = document.createElement("img");
     exerciseImg.src = exercise.img;
+    const exerciseInfo = document.createElement("div");
+    exerciseInfo.classList.add("exercise-info");
     const exerciseName = document.createElement("h3");
     exerciseName.innerText = exercise.name;
     const exerciseDuration = document.createElement("p");
     exerciseDuration.innerText = exercise.duration + " seconds";
-    exerciseElement.appendChild(exerciseId);
     exerciseElement.appendChild(exerciseImg);
-    exerciseElement.appendChild(exerciseName);
-    exerciseElement.appendChild(exerciseDuration);
+    exerciseInfo.appendChild(exerciseName);
+    exerciseInfo.appendChild(exerciseDuration);
+    exerciseElement.appendChild(exerciseInfo);
     return exerciseElement;
   }
 

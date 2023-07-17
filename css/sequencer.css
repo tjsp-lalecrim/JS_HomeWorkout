@@ -23,7 +23,8 @@
     margin-top: 10px;
 }
 
-.step-img{
+.step-img {
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,6 +40,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    text-transform: uppercase;
 }
 
 .step-duration {
@@ -61,19 +63,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
-}
-
-.step-buttons {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-
-}
-
-.step-buttons .btn {
     margin-top: 10px;
 }
