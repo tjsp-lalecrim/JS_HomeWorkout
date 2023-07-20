@@ -64,6 +64,13 @@ header {
     text-align: center;
 }
 
+.exercise p.interval {
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align: center;
+    color: #666;
+}
+
 .exercise h3 {
     margin: 5px 0;
     padding: 0;

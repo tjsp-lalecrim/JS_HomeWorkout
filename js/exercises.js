@@ -24,8 +24,8 @@ window.onload = function () {
   stepsCount.innerText = currExercises.length + " steps";
   totalDuration.innerText =
     currExercises.reduce(function (total, exercise) {
-      return total + exercise.duration;
-    }, 0) + " seconds";  
+      return total + exercise.duration + exercise.interval;
+    }, 0) + " seconds";
 
   // Create exercise element
   function createExercise(exercise, index) {
@@ -42,9 +42,14 @@ window.onload = function () {
     exerciseName.innerText = exercise.name;
     const exerciseDuration = document.createElement("p");
     exerciseDuration.innerText = exercise.duration + " seconds";
+    const exerciseInterval = document.createElement("p");
+    exerciseInterval.classList.add("interval");
+    exerciseInterval.innerText =
+      " + " + exercise.interval + " seconds (interval)";
     exerciseElement.appendChild(exerciseImg);
     exerciseInfo.appendChild(exerciseName);
     exerciseInfo.appendChild(exerciseDuration);
+    exerciseInfo.appendChild(exerciseInterval);
     exerciseElement.appendChild(exerciseInfo);
     return exerciseElement;
   }
