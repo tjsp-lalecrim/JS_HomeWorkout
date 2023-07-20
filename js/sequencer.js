@@ -146,7 +146,7 @@ window.onload = function () {
     const text = `Next step: ${steps[currStep].name} - ${steps[currStep].duration} seconds`;
     readText(text);
 
-    countdownToStart(10);
+    countdownToStart(steps[currStep].interval);
   };
 
   // Complete workout
