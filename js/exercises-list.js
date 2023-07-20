@@ -2,12 +2,6 @@ const exercises = [
   // Stretching
   {
     workoutId: 1,
-    name: "Get Ready!",
-    duration: 15,
-    img: "images/get_ready.png",
-  },
-  {
-    workoutId: 1,
     name: "Shoulder stretch Left",
     duration: 20,
     img: "images/shoulder_stretch_left.png",
@@ -50,12 +44,6 @@ const exercises = [
   },
   {
     workoutId: 1,
-    name: "Rest",
-    duration: 10,
-    img: "images/rest.png",
-  },
-  {
-    workoutId: 1,
     name: "Calf Stretch Left",
     duration: 20,
     img: "images/calf_stretch_left.png",
@@ -66,12 +54,7 @@ const exercises = [
     duration: 20,
     img: "images/calf_stretch_right.png",
   },
-  {
-    workoutId: 1,
-    name: "Rest",
-    duration: 10,
-    img: "images/rest.png",
-  },
+
   {
     workoutId: 1,
     name: "Kneeling Lunge Stretch Left",
@@ -86,21 +69,9 @@ const exercises = [
   },
   {
     workoutId: 1,
-    name: "Rest",
-    duration: 15,
-    img: "images/rest.png",
-  },
-  {
-    workoutId: 1,
     name: "Seated Butterfly Stretch",
     duration: 20,
     img: "images/seated_butterfly_stretch.png",
-  },
-  {
-    workoutId: 1,
-    name: "Rest",
-    duration: 10,
-    img: "images/rest.png",
   },
   {
     workoutId: 1,
@@ -116,21 +87,9 @@ const exercises = [
   },
   {
     workoutId: 1,
-    name: "Rest",
-    duration: 10,
-    img: "images/rest.png",
-  },
-  {
-    workoutId: 1,
     name: "Cobra Stretch",
     duration: 20,
     img: "images/cobra_stretch.png",
-  },
-  {
-    workoutId: 1,
-    name: "Rest",
-    duration: 10,
-    img: "images/rest.png",
   },
   {
     workoutId: 1,
@@ -139,12 +98,6 @@ const exercises = [
     img: "images/child_pose.png",
   },
   // Morning Warm Up
-  {
-    workoutId: 2,
-    name: "Get Ready!",
-    duration: 10,
-    img: "images/rest.png",
-  },
   {
     workoutId: 2,
     name: "Shoulder Stretch Left",
@@ -159,21 +112,9 @@ const exercises = [
   },
   {
     workoutId: 2,
-    name: "Rest",
-    duration: 10,
-    img: "images/rest.png",
-  },
-  {
-    workoutId: 2,
     name: "Jumping Jacks",
     duration: 30,
     img: "images/jumping_jacks.png",
-  },
-  {
-    workoutId: 2,
-    name: "Rest",
-    duration: 10,
-    img: "images/rest.png",
   },
   {
     workoutId: 2,
@@ -183,21 +124,9 @@ const exercises = [
   },
   {
     workoutId: 2,
-    name: "Rest",
-    duration: 10,
-    img: "images/rest.png"
-  },
-  {
-    workoutId: 2,
     name: "Bridge",
     duration: 30,
     img: "images/bridge.png",
-  },
-  {
-    workoutId: 2,
-    name: "Rest",
-    duration: 10,
-    img: "images/rest.png",
   },
   {
     workoutId: 2,
@@ -207,21 +136,9 @@ const exercises = [
   },
   {
     workoutId: 2,
-    name: "Rest",
-    duration: 10,
-    img: "images/rest.png",
-  },
-  {
-    workoutId: 2,
     name: "Bycicle Crunches",
     duration: 30,
     img: "images/bycicle_crunches.png",
-  },
-  {
-    workoutId: 2,
-    name: "Rest",
-    duration: 10,
-    img: "images/rest.png",
   },
   {
     workoutId: 2,
@@ -231,33 +148,15 @@ const exercises = [
   },
   {
     workoutId: 2,
-    name: "Rest",
-    duration: 10,
-    img: "images/rest.png",
-  },
-  {
-    workoutId: 2,
     name: "Bird Dog",
     duration: 30,
     img: "images/bird_dog.png",
   },
   {
     workoutId: 2,
-    name: "Rest",
-    duration: 10,
-    img: "images/rest.png",
-  },
-  {
-    workoutId: 2,
     name: "Plank",
     duration: 30,
     img: "images/plank.png",
-  },
-  {
-    workoutId: 2,
-    name: "Rest",
-    duration: 10,
-    img: "images/rest.png",
   },
   {
     workoutId: 2,
@@ -268,21 +167,9 @@ const exercises = [
   // ABS
   {
     workoutId: 3,
-    name: "Get Ready!",
-    duration: 15,
-    img: "images/get_ready.png",
-  },
-  {
-    workoutId: 3,
     name: "Bycicle Crunches",
     duration: 30,
     img: "images/bycicle_crunches.png",
-  },
-  {
-    workoutId: 3,
-    name: "Rest",
-    duration: 20,
-    img: "images/rest.png",
   },
   {
     workoutId: 3,
@@ -292,21 +179,9 @@ const exercises = [
   },
   {
     workoutId: 3,
-    name: "Rest",
-    duration: 15,
-    img: "images/rest.png",
-  },
-  {
-    workoutId: 3,
     name: "Leg Raises",
     duration: 30,
     img: "images/leg_raises.png",
-  },
-  {
-    workoutId: 3,
-    name: "Rest",
-    duration: 30,
-    img: "images/rest.png",
   },
   {
     workoutId: 3,
@@ -316,21 +191,9 @@ const exercises = [
   },
   {
     workoutId: 3,
-    name: "Rest",
-    duration: 15,
-    img: "images/rest.png",
-  },
-  {
-    workoutId: 3,
     name: "Bycicle Crunches",
     duration: 30,
     img: "images/bycicle_crunches.png",
-  },
-  {
-    workoutId: 3,
-    name: "Rest",
-    duration: 20,
-    img: "images/rest.png",
   },
   {
     workoutId: 3,
@@ -340,21 +203,9 @@ const exercises = [
   },
   {
     workoutId: 3,
-    name: "Rest",
-    duration: 15,
-    img: "images/rest.png",
-  },
-  {
-    workoutId: 3,
     name: "Leg Raises",
     duration: 30,
     img: "images/leg_raises.png",
-  },
-  {
-    workoutId: 3,
-    name: "Rest",
-    duration: 30,
-    img: "images/rest.png",
   },
   {
     workoutId: 3,
@@ -365,21 +216,9 @@ const exercises = [
   // Chest
   {
     workoutId: 4,
-    name: "Get Ready!",
-    duration: 10,
-    img: "images/get_ready.png",
-  },
-  {
-    workoutId: 4,
     name: "Knee push-ups",
     duration: 30,
     img: "images/knee_push_ups.png",
-  },
-  {
-    workoutId: 4,
-    name: "Rest",
-    duration: 15,
-    img: "images/rest.png",
   },
   {
     workoutId: 4,
@@ -389,21 +228,9 @@ const exercises = [
   },
   {
     workoutId: 4,
-    name: "Rest",
-    duration: 15,
-    img: "images/rest.png",
-  },
-  {
-    workoutId: 4,
     name: "Wide Arm Push-ups",
     duration: 15,
     img: "images/wide_arm_push_ups.png",
-  },
-  {
-    workoutId: 4,
-    name: "Rest",
-    duration: 15,
-    img: "images/rest.png",
   },
   {
     workoutId: 4,
@@ -413,21 +240,9 @@ const exercises = [
   },
   {
     workoutId: 4,
-    name: "Rest",
-    duration: 30,
-    img: "images/rest.png",
-  },
-  {
-    workoutId: 4,
     name: "Knee push-ups",
     duration: 30,
     img: "images/knee_push_ups.png",
-  },
-  {
-    workoutId: 4,
-    name: "Rest",
-    duration: 30,
-    img: "images/rest.png",
   },
   {
     workoutId: 4,
@@ -437,21 +252,9 @@ const exercises = [
   },
   {
     workoutId: 4,
-    name: "Rest",
-    duration: 30,
-    img: "images/rest.png",
-  },
-  {
-    workoutId: 4,
     name: "Wide Arm Push-ups",
     duration: 30,
     img: "images/wide_arm_push_ups.png",
-  },
-  {
-    workoutId: 4,
-    name: "Rest",
-    duration: 30,
-    img: "images/rest.png",
   },
   {
     workoutId: 4,
@@ -462,21 +265,9 @@ const exercises = [
   // HIIT
   {
     workoutId: 5,
-    name: "Get Ready!",
-    duration: 15,
-    img: "images/get_ready.png",
-  },
-  {
-    workoutId: 5,
     name: "Jumping Jacks",
     duration: 30,
     img: "images/jumping_jacks.png",
-  },
-  {
-    workoutId: 5,
-    name: "Rest",
-    duration: 15,
-    img: "images/rest.png",
   },
   {
     workoutId: 5,
@@ -486,33 +277,15 @@ const exercises = [
   },
   {
     workoutId: 5,
-    name: "Rest",
-    duration: 15,
-    img: "images/rest.png",
-  },
-  {
-    workoutId: 5,
     name: "Skater Jump",
     duration: 30,
     img: "images/skater_jump.png",
   },
   {
     workoutId: 5,
-    name: "Rest",
-    duration: 15,
-    img: "images/rest.png",
-  },
-  {
-    workoutId: 5,
     name: "Side Hop",
     duration: 30,
     img: "images/side_hop.png",
-  },
-  {
-    workoutId: 5,
-    name: "Rest",
-    duration: 15,
-    img: "images/rest.png",
   },
   {
     workoutId: 5,
@@ -522,21 +295,9 @@ const exercises = [
   },
   {
     workoutId: 5,
-    name: "Rest",
-    duration: 10,
-    img: "images/rest.png",
-  },
-  {
-    workoutId: 5,
     name: "Squat Reach Ups",
     duration: 20,
     img: "images/squat_reach_ups.png",
-  },
-  {
-    workoutId: 5,
-    name: "Rest",
-    duration: 10,
-    img: "images/rest.png",
   },
   {
     workoutId: 5,
@@ -546,21 +307,9 @@ const exercises = [
   },
   {
     workoutId: 5,
-    name: "Rest",
-    duration: 10,
-    img: "images/rest.png",
-  },
-  {
-    workoutId: 5,
     name: "Side Hop",
     duration: 20,
     img: "images/side_hop.png",
-  },
-  {
-    workoutId: 5,
-    name: "Rest",
-    duration: 10,
-    img: "images/rest.png",
   },
   {
     workoutId: 5,
@@ -586,13 +335,6 @@ const exercises = [
     duration: 10,
     img: "images/side_hop.png",
   },
-  {
-    workoutId: 5,
-    name: "Rest",
-    duration: 15,
-    img: "images/rest.png",
-  },
-
   {
     workoutId: 5,
     name: "Right Quad Stretch with wall",
