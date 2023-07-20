@@ -15,7 +15,7 @@
 .step-order {
     width: 100%;
     height: 100%;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -24,7 +24,7 @@
 }
 
 .step-img {
-    height: 150px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,12 +34,13 @@
 .step-description {
     width: 100%;
     height: 100%;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    text-align: center;
     text-transform: uppercase;
 }
 
@@ -59,9 +60,10 @@
 .next-step {
     width: 100%;
     height: 100%;
-    font-size: 1rem;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
