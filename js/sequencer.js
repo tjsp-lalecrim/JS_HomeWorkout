@@ -84,8 +84,6 @@ window.onload = function () {
   const initTimer = (maxTime) => {
     clearInterval(timer);
 
-    readText("Start!");
-
     timer = setInterval(() => {
       if (paused) return;
 
@@ -121,6 +119,7 @@ window.onload = function () {
 
       if (maxTime <= 0) {
         clearInterval(timer);
+        readText("Start!");
         initTimer(steps[currStep].duration);
       }
     }, 1000);
