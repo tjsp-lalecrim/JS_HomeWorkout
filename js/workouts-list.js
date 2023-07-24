@@ -24,4 +24,9 @@ const workouts = [
     name: "Fat Burning HIIT",
     description: "Super effective intense workout for weight loss.",
   },
+  {
+    id: 6,
+    name: "Dumbbell Lift ",
+    description: "Basic dumbbell lift",
+  },
 ];
