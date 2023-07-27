@@ -24,7 +24,10 @@ window.onload = function () {
   stepsCount.innerText = currExercises.length + " steps";
   totalDuration.innerText =
     currExercises.reduce(function (total, exercise) {
-      return total + exercise.duration + exercise.interval;
+      const exerciseTime =
+        exercise.duration > 0 ? exercise.duration : exercise.reps * 5;
+
+      return total + exerciseTime + exercise.interval;
     }, 0) + " seconds";
 
   // Create exercise element
@@ -40,12 +43,20 @@ window.onload = function () {
     exerciseInfo.classList.add("exercise-info");
     const exerciseName = document.createElement("h3");
     exerciseName.innerText = exercise.name;
-    const exerciseDuration = document.createElement("p");
-    exerciseDuration.innerText = exercise.duration + " seconds";
 
     exerciseElement.appendChild(exerciseImg);
     exerciseInfo.appendChild(exerciseName);
-    exerciseInfo.appendChild(exerciseDuration);
+
+    // Add duration if exists
+    if (exercise?.duration > 0) {
+      const exerciseDuration = document.createElement("p");
+      exerciseDuration.innerText = formatSecondsToClock(exercise.duration);
+      exerciseInfo.appendChild(exerciseDuration);
+    } else if (exercise?.reps > 0) {
+      const exerciseReps = document.createElement("p");
+      exerciseReps.innerText = " x" + exercise.reps;
+      exerciseInfo.appendChild(exerciseReps);
+    }
 
     // Add interval if exists
     if (exercise.interval > 0) {
@@ -64,11 +75,6 @@ window.onload = function () {
   currExercises.forEach(function (exercise, index) {
     exercisesList.appendChild(createExercise(exercise, index));
   });
-
-  // Back to workouts
-  function backToWorkouts() {
-    window.location.href = "index.html";
-  }
 
   // Start workout
   function startWorkout() {
