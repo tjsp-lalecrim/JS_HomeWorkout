@@ -41,11 +41,6 @@ window.onload = function () {
     speechSynthesis.speak(speech);
   };
 
-  // Back to workouts
-  function backToWorkouts() {
-    window.location.href = "index.html";
-  }
-
   // Pause step
   const pauseStep = () => {
     paused = !paused;
@@ -84,6 +79,8 @@ window.onload = function () {
   const initTimer = (maxTime) => {
     clearInterval(timer);
 
+    if (maxTime < 0) return;
+
     timer = setInterval(() => {
       if (paused) return;
 
@@ -99,7 +96,7 @@ window.onload = function () {
         }
 
         maxTime--;
-        return (stepDuration.innerText = maxTime);
+        return (stepDuration.innerText = formatSecondsToClock(maxTime));
       }
 
       clearInterval(timer);
@@ -111,6 +108,8 @@ window.onload = function () {
   const countdownToStart = (maxTime) => {
     clearInterval(timer);
 
+    const { duration } = steps[currStep];
+
     timer = setInterval(() => {
       maxTime--;
       if (maxTime < 6 && maxTime > 0) {
@@ -120,7 +119,9 @@ window.onload = function () {
       if (maxTime <= 0) {
         clearInterval(timer);
         readText("Start!");
-        initTimer(steps[currStep].duration);
+        if (duration > 0) {
+          initTimer(duration);
+        }
       }
     }, 1000);
   };
@@ -129,20 +130,28 @@ window.onload = function () {
   const updateCurrStep = () => {
     if (!steps[currStep]) return;
 
+    // destructuring step values
+    const { img, name, duration, reps } = steps[currStep];
+
     // Update step info
     stepId.innerText = currWorkout
       ? `Step ${currStep + 1} of ${steps.length}`
       : "";
-    stepImg.src = steps[currStep]?.img;
-    stepDescription.innerText = steps[currStep]?.name;
-    stepDuration.innerText = steps[currStep]?.duration;
+    stepImg.src = img;
+    stepDescription.innerText = name;
+    stepDuration.innerText =
+      duration > 0 ? formatSecondsToClock(duration) : reps + "x";
+
+    // Update next step
     nextStepButton.innerText =
       currStep === steps.length - 1
         ? "Next: Workout complete"
         : "Next: " + steps[currStep + 1]?.name;
 
     // Read step info
-    const text = `Next step: ${steps[currStep].name} - ${steps[currStep].duration} seconds`;
+    const text = `Next step: ${name} - ${
+      duration > 0 ? duration + " seconds" : reps + " reps"
+    }`;
     readText(text);
 
     countdownToStart(steps[currStep].interval);
