@@ -1,6 +1,6 @@
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Get workoutId from URL
-  const workoutId = window.location.search.split("=")[1];
+  const workoutId = new URLSearchParams(window.location.search).get("workoutId");
 
   // Get elements
   const title = document.getElementById("title");
@@ -23,18 +23,14 @@ window.onload = function () {
   speech.lang = "en-US";
 
   // Get workout and exercises
-  const currWorkout = workouts.find(function (workout) {
-    return workout.id == workoutId;
-  });
-  const steps = exercises.filter(function (exercise) {
-    return exercise.workoutId == workoutId;
-  });
+  const currWorkout = workouts.find(workout => workout.id == workoutId);
+  const steps = exercises.filter(exercise => exercise.workoutId == workoutId);
 
   // Update Header
-  title.innerText = currWorkout?.name ?? "Workout not found";
+  title.innerText = currWorkout?.name || "Workout not found";
 
   // Text to speech
-  const readText = (text) => {
+  const readText = text => {
     if (!("speechSynthesis" in window)) return;
     speechSynthesis.cancel();
     speech.text = text;
@@ -46,11 +42,8 @@ window.onload = function () {
     paused = !paused;
     btnPause.innerText = paused ? "Resume" : "Pause";
 
-    if (paused) {
-      readText("Paused");
-    } else {
-      readText("Resumed");
-    }
+    const statusText = paused ? "Paused" : "Resumed";
+    readText(statusText);
   };
 
   // Previous step
@@ -71,12 +64,10 @@ window.onload = function () {
     updateCurrStep();
   };
 
-  const nextStepManual = () => {
-    nextStep();
-  };
+  const nextStepManual = () => nextStep();
 
   // Init timer
-  const initTimer = (maxTime) => {
+  const initTimer = maxTime => {
     clearInterval(timer);
 
     if (maxTime < 0) return;
@@ -87,7 +78,7 @@ window.onload = function () {
       if (maxTime > 0) {
         // read every 10 seconds
         if (maxTime < steps[currStep].duration && maxTime % 10 === 0) {
-          readText(maxTime + " seconds remaining");
+          readText(`${maxTime} seconds remaining`);
         }
 
         // countdown from 5
@@ -105,7 +96,7 @@ window.onload = function () {
   };
 
   // Countdown to start step
-  const countdownToStart = (maxTime) => {
+  const countdownToStart = maxTime => {
     clearInterval(timer);
 
     const { duration } = steps[currStep];
@@ -140,17 +131,17 @@ window.onload = function () {
     stepImg.src = img;
     stepDescription.innerText = name;
     stepDuration.innerText =
-      duration > 0 ? formatSecondsToClock(duration) : reps + "x";
+      duration > 0 ? formatSecondsToClock(duration) : `${reps}x`;
 
     // Update next step
     nextStepButton.innerText =
       currStep === steps.length - 1
         ? "Next: Workout complete"
-        : "Next: " + steps[currStep + 1]?.name;
+        : `Next: ${steps[currStep + 1]?.name}`;
 
     // Read step info
     const text = `Next step: ${name} - ${
-      duration > 0 ? duration + " seconds" : reps + " reps"
+      duration > 0 ? `${duration} seconds` : `${reps} reps`
     }`;
     readText(text);
 
@@ -175,4 +166,4 @@ window.onload = function () {
 
   // Init
   updateCurrStep();
-};
+});

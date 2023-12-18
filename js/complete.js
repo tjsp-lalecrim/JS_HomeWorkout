@@ -1,7 +1,13 @@
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
+  initSpeechSynthesis();
+});
+
+function initSpeechSynthesis() {
   if (!("speechSynthesis" in window)) return;
-  speech = new SpeechSynthesisUtterance();
+
+  const speech = new SpeechSynthesisUtterance();
   speech.lang = "en-US";
   speech.text = "Congratulations! You have completed the workout.";
+
   speechSynthesis.speak(speech);
-};
+}

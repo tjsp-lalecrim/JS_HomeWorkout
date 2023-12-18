@@ -1,26 +1,37 @@
-window.onload = function () {
-  // Get workouts
+document.addEventListener("DOMContentLoaded", function () {
   const workoutsList = document.getElementById("workoutsList");
 
-  // Create workout
-  function createWorkout(workout) {
+  function createWorkoutElement(workout) {
     const workoutElement = document.createElement("div");
-    workoutElement.id = "workout-" + workout.id;
+    workoutElement.id = `workout-${workout.id}`;
     workoutElement.classList.add("workout");
+
     const workoutName = document.createElement("h3");
     workoutName.innerText = workout.name;
+
     const workoutDescription = document.createElement("p");
     workoutDescription.innerText = workout.description;
+
     workoutElement.appendChild(workoutName);
     workoutElement.appendChild(workoutDescription);
+
     workoutElement.addEventListener("click", function () {
-      window.location.href = "exercises.html?workoutId=" + workout.id;
+      navigateToExercises(workout.id);
     });
+
     return workoutElement;
   }
 
-  // Add workouts to DOM
-  workouts.forEach(function (workout) {
-    workoutsList.appendChild(createWorkout(workout));
-  });
-};
+  function navigateToExercises(workoutId) {
+    window.location.href = `exercises.html?workoutId=${workoutId}`;
+  }
+
+  function renderWorkouts() {
+    workouts.forEach(function (workout) {
+      workoutsList.appendChild(createWorkoutElement(workout));
+    });
+  }
+
+  // Call the render function
+  renderWorkouts();
+});
