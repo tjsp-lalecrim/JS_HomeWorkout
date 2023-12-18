@@ -1,9 +1,8 @@
 .workouts-list {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-    margin: 0 5px 0 5px;
+    margin: 0 -10px;
 }
 
 .workout {
@@ -12,24 +11,33 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid #000;
+    border: 1px solid #ddd;
     border-radius: 10px;
-    margin: 5px;
+    margin: 10px;
+    padding: 15px;
+    transition: background-color 0.3s;
 }
 
 .workout:hover {
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
     cursor: pointer;
 }
 
 .workout h3 {
     font-size: 1.5rem;
     font-weight: 600;
-    margin: 10px;
+    margin: 10px 0;
+    color: #333;
 }
 
 .workout p {
     font-size: 1.2rem;
-    margin: 5px;
+    margin: 5px 0;
     text-align: center;
+    color: #666;
+}
+
+.workout:before {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
 }

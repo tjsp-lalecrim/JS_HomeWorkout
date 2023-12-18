@@ -5,13 +5,16 @@ function backToWorkouts() {
 
 // Format seconds to clock format
 function formatSecondsToClock(seconds) {
-  if (typeof seconds !== "number" || seconds < 0) return seconds;
+  if (typeof seconds !== "number" || seconds < 0) {
+    // Return a default value or throw an exception
+    return "00:00";
+  }
 
   const minutes = Math.floor(seconds / 60);
   seconds %= 60;
 
-  const formattedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
-  const formattedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+  const formattedMinutes = String(minutes).padStart(2, "0");
+  const formattedSeconds = String(seconds).padStart(2, "0");
 
   return `${formattedMinutes}:${formattedSeconds}`;
 }

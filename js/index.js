@@ -1,26 +1,57 @@
-window.onload = function () {
-  // Get workouts
+document.addEventListener("DOMContentLoaded", function () {
   const workoutsList = document.getElementById("workoutsList");
 
-  // Create workout
-  function createWorkout(workout) {
+  function createWorkoutElement(workout) {
     const workoutElement = document.createElement("div");
-    workoutElement.id = "workout-" + workout.id;
+    workoutElement.id = `workout-${workout.id}`;
     workoutElement.classList.add("workout");
+    workoutElement.setAttribute("tabindex", "0");
+    workoutElement.setAttribute("role", "button");
+    workoutElement.setAttribute("aria-label", `Click to show the workout exercises: ${workout.name}`);
+
     const workoutName = document.createElement("h3");
     workoutName.innerText = workout.name;
+    workoutName.setAttribute("aria-label", `Nome do exercício: ${workout.name}`);
+
     const workoutDescription = document.createElement("p");
     workoutDescription.innerText = workout.description;
+    workoutDescription.setAttribute("aria-label", `Workout description: ${workout.description}`);
+
     workoutElement.appendChild(workoutName);
     workoutElement.appendChild(workoutDescription);
+
     workoutElement.addEventListener("click", function () {
-      window.location.href = "exercises.html?workoutId=" + workout.id;
+      navigateToExercises(workout.id);
     });
+
+    workoutElement.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        navigateToExercises(workout.id);
+      }
+    });
+
+    workoutElement.addEventListener("focus", function () {
+      workoutElement.classList.add("focused");
+    });
+
+    workoutElement.addEventListener("blur", function () {
+      workoutElement.classList.remove("focused");
+    });
+
     return workoutElement;
   }
 
-  // Add workouts to DOM
-  workouts.forEach(function (workout) {
-    workoutsList.appendChild(createWorkout(workout));
-  });
-};
+  function navigateToExercises(workoutId) {
+    window.location.href = `exercises.html?workoutId=${workoutId}`;
+  }
+
+  function renderWorkouts() {
+    workouts.forEach(function (workout) {
+      workoutsList.appendChild(createWorkoutElement(workout));
+    });
+  }
+
+  workoutsList.setAttribute("aria-label", "Workout list");
+
+  renderWorkouts();
+});
