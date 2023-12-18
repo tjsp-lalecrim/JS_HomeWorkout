@@ -32,9 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const exerciseElement = document.createElement("div");
     exerciseElement.id = `exercise-${index}`;
     exerciseElement.classList.add("exercise");
+    exerciseElement.setAttribute("tabindex", "0");
 
     const exerciseImg = document.createElement("img");
     exerciseImg.src = exercise.img;
+    exerciseImg.alt = exercise.name;
 
     const exerciseInfo = document.createElement("div");
     exerciseInfo.classList.add("exercise-info");
@@ -60,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     exerciseElement.appendChild(exerciseImg);
     exerciseElement.appendChild(exerciseInfo);
+
     return exerciseElement;
   }
 

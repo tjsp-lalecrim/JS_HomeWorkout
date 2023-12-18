@@ -129,6 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ? `Step ${currStep + 1} of ${steps.length}`
       : "";
     stepImg.src = img;
+    stepImg.alt = name;
     stepDescription.innerText = name;
     stepDuration.innerText =
       duration > 0 ? formatSecondsToClock(duration) : `${reps}x`;
