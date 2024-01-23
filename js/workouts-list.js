@@ -4,11 +4,11 @@ const workouts = [
     name: "Full body stretching",
     description: "A full body stretching routine",
   },
-  {
-    id: 2,
-    name: "Morning Warm Up",
-    description: "Wake up with energy, make your body primed for the day",
-  },
+  // {
+  //   id: 2,
+  //   name: "Morning Warm Up",
+  //   description: "Wake up with energy, make your body primed for the day",
+  // },
   {
     id: 3,
     name: "Only four moves for ABS",
@@ -20,13 +20,13 @@ const workouts = [
     description: "Chest exercises for beginners",
   },
   {
+    id: 6,
+    name: "Kettlebell Lift ",
+    description: "Basic kettebell lift",
+  },
+  {
     id: 5,
     name: "Fat Burning HIIT",
     description: "Super effective intense workout for weight loss.",
-  },
-  {
-    id: 6,
-    name: "Dumbbell Lift ",
-    description: "Basic dumbbell lift",
   },
 ];
