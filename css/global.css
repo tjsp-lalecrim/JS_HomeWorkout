@@ -47,8 +47,16 @@ header {
 
 /* Media Query para telas menores que 600px */
 @media only screen and (max-width: 600px) {
-    .container {
-        padding: 10px;
+    header {
+        margin: 0;
+        padding: 0;
     }
 
+    .container {
+        padding: 5px;
+    }
+
+    .buttons {
+        margin-top: 5px;
+    }
 }

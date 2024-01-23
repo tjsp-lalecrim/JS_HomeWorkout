@@ -15,14 +15,14 @@
 }
 
 .step-order {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-top: 10px;
 }
 
 .step-img {
-    height: 200px;
-    margin-top: 10px;
+    height: 150px;
+    margin-top: 5px;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -30,7 +30,7 @@
 .step-description {
     font-size: 2.75rem;
     font-weight: 600;
-    margin-top: 10px;
+    margin-top: 5px;
     text-transform: uppercase;
 }
 
@@ -39,25 +39,42 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.next-step {
-    font-size: 1.2rem;
+    padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
+.next-step {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 @media only screen and (max-width: 600px) {
+    header {
+        margin: 0;
+        padding: 0;
+    }
+
+    .step-img {
+        height: 100px;
+        margin: 0;
+    }
+
     .step-description {
-        font-size: 1.5rem;
+        font-size: 2rem;
+        margin: 0;
     }
 
     .step-duration {
-        font-size: 1.5rem;
+        font-size: 4rem;
+        margin: 0;
     }
+
+    .next-step {
+        margin: 0;
+    }
+    
 }

@@ -13,7 +13,7 @@
     justify-content: center;
     border: 1px solid #ddd;
     border-radius: 10px;
-    margin: 10px;
+    margin: 5px;
     padding: 15px;
     transition: background-color 0.3s;
 }
@@ -40,4 +40,14 @@
 .workout:before {
     font-size: 1.2rem;
     margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .workout {
+        padding: 5px;
+    }
+
+    .workout h3 {
+        margin: 5px 0;
+    }
 }
